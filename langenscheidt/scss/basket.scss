@@ -1,0 +1,387 @@
+@charset "UTF-8"; //
+// basket
+@import "../base/variables";
+@import "../helper/mixins";
+@import "../helper/mq";
+@import "../helper/rem";
+@import "../helper/z-index";
+@import "../base/typography";
+
+
+
+.s-basket {
+  h1 {
+    text-align: center;
+  }
+
+  .row {
+      margin-bottom: 0px;
+  }
+  .s-basket__headertext--first {
+    margin-right: 3%;
+  }
+
+  .s-basket__first-line .s-basket__title {
+    margin-top: auto;
+  }
+
+  .s-basket__title, .s-basket__description {
+      width: 90%;
+  }
+
+  .prettydropdown > ul > li {
+    line-height: normal;
+    border-top: none;
+  }
+
+  .wk-cover-img {
+    height: 96px;
+    width: 60px;
+  }
+
+
+  .wk-middle-numbers {
+    margin-left: 20%;
+  }
+
+  .wk-download-btn {
+    width: 19px;
+    height: 13px;
+    margin-right: 0.5rem;
+    // vertical-align: top;
+  }
+
+  .wk-download-text {
+    display: inline;
+    color: $firefly;
+    font-size: 14px;
+    font-weight: 300;
+    /* Text style for "Download" */
+    letter-spacing: 0.26px;
+  }
+
+
+
+  .noDisplay {
+    display: none;
+  }
+
+  .NoVisible {
+      visibility: visible;
+  }
+
+  .s-basket__price,
+  .s-basket__price--total {
+    width: 4rem;
+  }
+
+  .s-pdp__basket__description__price {
+    color: black;
+  }
+
+  .s-pdp__basket__description span {
+      right: 7%;
+      position: absolute;
+  }
+
+  .wk-versandNach {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .wk-select-country-area {
+    margin-top: 1rem;
+    border-bottom: 1px solid #000000;
+  }
+
+  #selectCountry {
+    border: none;
+    background-color: #FFFFFF;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+
+  .shippingOptionsArea {
+    h4 {
+      color: #666666;
+      font-size: 16px;
+      font-weight: 300;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+    }
+
+    .shippingOptionsItems {
+        color: #666666;
+        font-size: 16px;
+        font-weight: 300;
+    }
+  }
+
+  .gesamtpreisArea {
+    color: #36a5ec;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 1rem;
+
+    span {
+      position: absolute;
+      font-size: 24px;
+      right: 1rem;
+    }
+    .s-pdp__basket__description__vat {
+        margin-top: 0.8rem;
+    }
+  }
+
+  .s-font--copytext {
+      font-size: 0.8rem;
+  }
+
+
+  #prettydropdown-s-select--count input {
+      width: 2.8rem;
+      padding-left: 0.2rem;
+  }
+
+
+
+  .wk-is-empty {
+      font-size: 18px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .wk-middle-numbers .theQuantities {
+      margin-right: 1rem;
+    }
+    .s-basket__title {
+        width: 98%;
+    }
+    .row .product-details-area {
+        margin-top: 3.5rem;
+    }
+
+    .s-basket__delete {
+        margin-left: -0.1rem;
+    }
+
+  }
+
+
+  @include element ('desc-close') {
+    position: relative;
+  }
+
+  @include element ('first-line') {
+    .s-basket__title {
+      @include rem(margin-top, 60px);
+    }
+
+
+
+
+
+    @include modifier ('article') {
+      display: block;
+      @include mq($until: desktop) {
+        display: none;
+      }
+    }
+  }
+
+  .s-select__container {
+    position: absolute;
+    top: -17px;
+    @include mq($until: tablet) {
+      position: relative;
+    }
+  }
+
+  @include element ('headertext') {
+    @include rem(margin-bottom, 30px);
+    display: none;
+    @include mq($until: tablet) {
+      display: block;
+    }
+    @include mq($until: mobile-landscape) {
+      display: block;
+    }
+
+    @include modifier ('first') {
+      display: block;
+    }
+
+    @include modifier ('count') {
+      @include rem(margin-bottom, 12px);
+    }
+  }
+
+      .icon--lgs-close-icon {
+        @include rem(margin-top, 60px !important);
+        @include mq($until: tablet) {
+           @include rem(margin-top, 0 !important);
+        }
+        margin-left: 1rem;
+        cursor: pointer;
+      }
+
+      .icon--lgs-close-icon__first-line {
+        @include rem(margin-top, 0px);
+        @include mq($until: tablet) {
+           @include rem(margin-top, 0 !important);
+        }
+        cursor: pointer;
+      }
+
+
+
+  // .icon--lgs-close-icon:first-of-type {
+  //   margin-top: 0;
+  // }
+
+
+  .icon--lgs-close-icon--mobile {
+      display: none;
+      position: absolute;
+      @include rem(right, 10px);
+      @include mq($until: tablet) {
+        display: block;
+      }
+      @include mq($until: mobile-landscape) {
+        display: block;
+      }
+  }
+
+
+
+  .s-basket__delete {
+    display: block;
+    @include mq($until: tablet) {
+      display: none;
+    }
+    @include mq($until: mobile-landscape) {
+      display: none;
+    }
+  }
+
+  @include element ('title') {
+    @include rem(font-size, 14px);
+    color: $primary;
+  }
+
+  @include element ('delete') {
+    @include rem(margin-top, 60px);
+  }
+
+  @include element ('price') {
+    @include rem(font-size, 14px);
+    color: $primary;
+
+    @include modifier ('total') {
+      @include rem(font-size, 14px);
+      color: $picton-blue;
+    }
+  }
+
+  @include element ('description') {
+    @include rem(margin-top, 10px);
+    @include rem(font-size, 14px);
+    font-weight: bold;
+    color: $primary;
+  }
+
+  @include element ('delivery') {
+    @include rem(margin-top, 24px);
+    @include rem(font-size, 14px);
+    color: $gray;
+  }
+
+  .prettydropdown.arrow > ul > li.selected:after,
+  .prettydropdown.arrow > ul > li.selected:before {
+    top: -53px;
+    right: 35px;
+  }
+
+  // .row.s-basket__first-line .prettydropdown {
+  //     margin-top: 1rem;
+  // }
+
+  .prettydropdown {
+    width: 20px !important;
+    border-bottom: none;
+
+
+    .fa-minus-circle:after {
+      top: -110px;
+      right: 55px;
+    }
+
+    > ul {
+      width: 20px;
+    }
+
+    > ul li.selected {
+      @include rem(font-size, 14px);
+      color: $primary;
+    }
+  }
+
+  .s-pdp__basket {
+    margin-top: 0;
+    @include rem(padding-left, 20px);
+    @include rem(padding-right, 20px);
+
+    @include element ('add-to') {
+      max-width: 100%;
+    }
+
+    @include element ('category') {
+      @include rem(margin-bottom, 40px);
+      @include rem(font-size, 20px);
+      text-align: left;
+      color: $primary;
+    }
+
+    @include element ('description') {
+      display: flex;
+
+      @include element ('headline') {
+        color: $picton-blue;
+      }
+
+      @include element ('price') {
+        position: absolute;
+        @include rem(right, 20px);
+        font-weight: 400;
+        color: $picton-blue;
+      }
+
+      @include element ('vat') {
+        @include rem(margin-top, 8px);
+        @include rem(margin-bottom, 30px);
+        @include rem(font-size, 12px);
+        text-align: right;
+        color: $silver-chalice;
+      }
+
+      @include element ('delivery') {
+        @include rem(font-size, 12px);
+        text-align: right;
+        color: $silver-chalice;
+      }
+
+      @include element ('link') {
+        text-align: right;
+
+        a {
+          @include rem(font-size, 12px);
+        }
+      }
+    }
+  }
+}
